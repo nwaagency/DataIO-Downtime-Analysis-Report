@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | SC Engineering</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-white pt-20">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
+        <div class="container mx-auto px-4 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center"><img src="https://placehold.co/400x120/0b1a2d/white?text=SC+ENGINEERING" alt="Logo" class="h-10 w-auto"></a>
+            <div class="hidden lg:flex items-center gap-10 font-bold text-slate-400">
+                <a href="index.html">Home</a>
+                <a href="services.html" class="text-blue-900">Services</a>
+                <a href="projects.html">Projects</a>
+                <a href="about.html">About</a>
+                <a href="contact.html" class="bg-[#0b1f3f] text-white px-6 py-2 rounded-lg">Contact</a>
+            </div>
+            <button id="mobile-menu-btn" class="lg:hidden text-slate-900"><i data-lucide="menu"></i></button>
+        </div>
+    </nav>
+
+    <div class="pt-32 pb-24 container mx-auto px-4">
+        <div class="text-center mb-16 flex flex-col items-center">
+            <span class="inline-block px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest mb-4 bg-blue-50 text-blue-900 border border-blue-100">Expertise</span>
+            <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-slate-900 mb-4 text-center">Engineering Services</h1>
+            <div class="h-1 w-12 rounded-full bg-blue-900 mb-6"></div>
+        </div>
+        
+        <div class="flex justify-center gap-4 mb-20">
+            <button id="tab-cnc" class="tab-btn active px-8 py-3 border-2 border-slate-200 rounded-lg font-bold transition-all">CNC Machining</button>
+            <button id="tab-dev" class="tab-btn px-8 py-3 border-2 border-slate-200 rounded-lg font-bold transition-all">Product Development</button>
+        </div>
+
+        <div id="service-content" class="grid lg:grid-cols-2 gap-20 items-center max-w-6xl mx-auto min-h-[550px]">
+            <!-- Dynamic Content Area -->
+        </div>
+    </div>
+
+    <footer class="bg-[#0b1a2d] text-white py-12 text-center text-sm font-bold tracking-widest uppercase mt-20">
+        © 2024 Southern Composite Engineering
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        
+        const details = {
+            cnc: {
+                title: "CNC Manufacturing",
+                desc: "Our workshop is optimized for 4-axis precision machining. We specialize in complex components that require tight tolerances and superior finishes.",
+                items: ["Aluminum, Stainless Steel & Brass", "Engineering Plastics (PEEK, Delrin, Nylon)", "Micron-level accuracy and repeatability", "Small to medium batch production"],
+                image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200"
+            },
+            dev: {
+                title: "Product Development",
+                desc: "We assist clients from the napkin sketch stage through to functional production prototypes.",
+                items: ["CAD/CAM System Integration", "Iterative mechanical prototyping", "Control system & Mechatronics design", "Full technical documentation"],
+                image: "https://images.unsplash.com/photo-1561144443-f546f6311402?auto=format&fit=crop&q=80&w=1200"
+            }
+        };
+
+        function updateTab(key) {
+            const data = details[key];
+            const container = document.getElementById('service-content');
+            container.style.opacity = 0;
+            
+            setTimeout(() => {
+                container.innerHTML = `
+                    <div class="space-y-8">
+                        <h2 class="text-4xl font-bold text-slate-900">${data.title}</h2>
+                        <p class="text-xl text-slate-500 leading-relaxed">${data.desc}</p>
+                        <ul class="space-y-4">
+                            ${data.items.map(item => `
+                                <li class="flex items-center gap-4 font-bold text-slate-700">
+                                    <div class="w-2 h-2 rounded-full bg-blue-900"></div> ${item}
+                                </li>
+                            `).join('')}
+                        </ul>
+                        <a href="contact.html" class="inline-block bg-[#0b1f3f] text-white px-8 py-4 rounded-lg font-bold hover:scale-105 transition-all">Start Project</a>
+                    </div>
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl h-[550px] border border-slate-100">
+                        <img src="${data.image}" class="w-full h-full object-cover">
+                    </div>
+                `;
+                container.style.opacity = 1;
+            }, 300);
+        }
+
+        document.getElementById('tab-cnc').addEventListener('click', (e) => {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            e.target.classList.add('active');
+            updateTab('cnc');
+        });
+
+        document.getElementById('tab-dev').addEventListener('click', (e) => {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            e.target.classList.add('active');
+            updateTab('dev');
+        });
+
+        updateTab('cnc');
+    </script>
+</body>
+</html>
