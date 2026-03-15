@@ -1298,16 +1298,16 @@ video {
   padding: 3rem;
 }
 
+.p-20 {
+  padding: 5rem;
+}
+
 .p-4 {
   padding: 1rem;
 }
 
 .p-8 {
   padding: 2rem;
-}
-
-.p-20 {
-  padding: 5rem;
 }
 
 .px-3 {
@@ -1424,6 +1424,11 @@ video {
   line-height: 1;
 }
 
+.text-7xl {
+  font-size: 4.5rem;
+  line-height: 1;
+}
+
 .text-\[10px\] {
   font-size: 10px;
 }
@@ -1446,11 +1451,6 @@ video {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-.text-7xl {
-  font-size: 4.5rem;
-  line-height: 1;
 }
 
 .font-black {
