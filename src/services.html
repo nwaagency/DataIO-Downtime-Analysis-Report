@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services - SC Engineering</title>
+  
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+</head>
+<body>
+  <!-- Navigation Partial -->
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container nav-content">
+      <a href="/index.html" class="logo-link">
+        <img src="/assets/Branding_SCE.png" alt="SC Engineering" class="logo-img" style="height: clamp(50px, 6vw, 70px);">
+      </a>
+      <div class="nav-links desktop-nav">
+        <a href="/index.html">Home</a>
+        <a href="/services.html" class="active">Services</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html" class="btn btn-primary">Contact</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Toggle menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="mobile-menu-panel">
+      <a href="/index.html">Home</a>
+      <a href="/services.html" class="active">Services</a>
+      <a href="/projects.html">Projects</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Page Header -->
+    <header class="page-header" style="background-image: url('/assets/Blue Background.png');">
+      <div class="header-overlay"></div>
+      <div class="container relative z-10 text-center scroll-animate">
+        <h1>Services</h1>
+        <div class="accent-line mx-auto"></div>
+        <p>Product Development and CNC Solutions.</p>
+      </div>
+    </header>
+
+    <!-- CNC Manufacturing Section -->
+    <section id="cnc" class="section-default scroll-animate">
+      <div class="container">
+        <div class="section-header">
+          <h2>CNC Manufacturing</h2>
+          <div class="accent-line"></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          <div class="service-details">
+            <h3>Contact us with your design or idea!</h3>
+            <ul class="feature-list">
+              <li>Multi-material: aluminum, steels, engineering plastics, and other composites.</li>
+              <li>Complex geometries.</li>
+              <li>Micron-level accuracy.</li>
+              <li>4th Axis CNC.</li>
+            </ul>
+            <p>The 4th axis allows for rotation of the part whilst moving the cutting tool in the x-y-z plane relative to the part.</p>
+            <p>CNC stands for Computer Numerical Control, this allows for precise manufacturing.</p>
+            
+            <a href="/contact.html" class="btn btn-primary mt-4">Get a quote</a>
+          </div>
+
+          <div class="service-media-showcase">
+            <!-- Main Display -->
+            <div class="media-main shadow-lg rounded-2xl overflow-hidden">
+              <video src="/assets/DSC_2714.mp4" autoplay loop muted playsinline class="w-full h-full object-cover" id="cnc-main-video"></video>
+            </div>
+            
+            <!-- Gallery Thumbnails (Functionality to be added in JS) -->
+            <div class="gallery-thumbs mt-4 flex gap-3 overflow-x-auto">
+              <div class="thumb active" data-src="/assets/DSC_2714.mp4" data-type="video">
+                <img src="/assets/cnc_coverImage.png" alt="Facing" class="w-24 h-16 object-cover rounded-md">
+              </div>
+              <div class="thumb" data-src="/assets/Services/CNC/CNC_injection_molding_yellow.jpg" data-type="image">
+                <img src="/assets/Services/CNC/CNC_injection_molding_yellow.jpg" alt="Injection Mold" class="w-24 h-16 object-cover rounded-md">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Development Section -->
+    <section id="product-development" class="section-dark bg-primary text-white scroll-animate">
+      <div class="container">
+        <div class="section-header text-center">
+          <h2 class="text-white">Product Development</h2>
+          <div class="accent-line mx-auto bg-white"></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          <div class="service-details">
+            <h3 class="text-white">Automate your system with our engineering expertise!</h3>
+            <ul class="feature-list text-white">
+              <li>Computer aided design and manufacturing (CAD and CAM)</li>
+              <li>Rapid prototyping and iterative design.</li>
+              <li>Vendor coordination and quality control.</li>
+            </ul>
+            <h4 class="text-white mt-4">Competencies:</h4>
+            <p>Robotics, Pneumatics, Ultrasonic Welding, 3d printing and more!</p>
+            
+            <a href="/contact.html" class="btn btn-light mt-4">Start your project</a>
+          </div>
+
+          <div class="service-media-showcase">
+            <div class="media-main shadow-lg rounded-2xl overflow-hidden border border-white/20">
+              <video src="/assets/Services/ProductDev/Sorting_Machine_Vid.mp4" autoplay loop muted playsinline class="w-full h-full object-cover"></video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Partial -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="/assets/Branding_SCE.png" alt="SCE Branding" class="footer-logo">
+        <p>Product Development and CNC Solutions.</p>
+      </div>
+      <div class="footer-links">
+        <h4>QUICK LINKS</h4>
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="/projects.html">Projects</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Southern Composite Engineering. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+  <script src="/js/animations.js"></script>
+</body>
+</html>

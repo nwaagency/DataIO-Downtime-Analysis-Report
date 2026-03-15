@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - SC Engineering</title>
+  
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+</head>
+<body>
+  <!-- Navigation Partial -->
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container nav-content">
+      <a href="/index.html" class="logo-link">
+        <img src="/assets/Branding_SCE.png" alt="SC Engineering" class="logo-img" style="height: clamp(50px, 6vw, 70px);">
+      </a>
+      <div class="nav-links desktop-nav">
+        <a href="/index.html">Home</a>
+        <a href="/services.html">Services</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html" class="active btn btn-primary">Contact</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Toggle menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="mobile-menu-panel">
+      <a href="/index.html">Home</a>
+      <a href="/services.html">Services</a>
+      <a href="/projects.html">Projects</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html" class="active">Contact</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Page Header -->
+    <header class="page-header" style="background-image: url('/assets/Blue Background.png');">
+      <div class="header-overlay"></div>
+      <div class="container relative z-10 text-center scroll-animate">
+        <h1>Contact Us</h1>
+        <div class="accent-line mx-auto"></div>
+        <p>Get in touch to learn more about what we can do for you.</p>
+      </div>
+    </header>
+
+    <section class="section-default">
+      <div class="container max-w-6xl scroll-animate">
+        
+        <div class="card shadow-2xl border-slate-200 overflow-hidden p-0 relative">
+          <div class="grid grid-cols-1 lg:grid-cols-2">
+            
+            <!-- Contact Info Sidebar -->
+            <div class="p-8 lg:p-12 lg:border-r border-slate-200 bg-slate-50/50">
+              <h2 class="text-3xl font-bold mb-8">Contact Information</h2>
+              
+              <div class="space-y-6">
+                <!-- Email -->
+                <div class="contact-info-block flex items-start gap-4">
+                  <div class="icon-circle bg-primary/10 text-primary p-3 rounded-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                  </div>
+                  <div>
+                    <p class="text-xs font-semibold text-muted-foreground uppercase tracking-wide">Email Address</p>
+                    <a href="mailto:sales@scengineering.co.za" class="font-semibold text-lg hover:text-primary transition-colors">sales@scengineering.co.za</a>
+                  </div>
+                </div>
+
+                <!-- Hours -->
+                <div class="contact-info-block flex items-start gap-4">
+                  <div class="icon-circle bg-primary/10 text-primary p-3 rounded-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  </div>
+                  <div>
+                    <p class="text-xs font-semibold text-muted-foreground uppercase tracking-wide">Business Hours</p>
+                    <p class="font-semibold text-lg">09:00 – 17:00<br>Mon – Fri</p>
+                  </div>
+                </div>
+
+                <!-- Location -->
+                <div class="contact-info-block flex items-start gap-4">
+                  <div class="icon-circle bg-primary/10 text-primary p-3 rounded-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                  </div>
+                  <div>
+                    <p class="text-xs font-semibold text-muted-foreground uppercase tracking-wide">Workshop Location</p>
+                    <p class="font-semibold text-lg">Prime Park, Mocke Road<br>Diep River, Western Cape</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Map Embed inside info card -->
+              <div class="mt-8 rounded-xl overflow-hidden shadow-sm h-64 border border-slate-200">
+                <iframe 
+                  src="https://www.google.com/maps?q=Prime%20Park%20Mocke%20Road%20Diep%20River%20Western%20Cape&output=embed" 
+                  width="100%" 
+                  height="100%" 
+                  style="border:0;" 
+                  allowfullscreen="" 
+                  loading="lazy">
+                </iframe>
+              </div>
+            </div>
+
+            <!-- Form Sidebar -->
+            <div class="p-8 lg:p-12">
+              <h2 class="text-3xl font-bold mb-8">Send Us a Message</h2>
+              
+              <form id="contact-form" class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div class="form-group">
+                    <label for="name" class="block font-semibold mb-2">Name <span class="text-red-500">*</span></label>
+                    <input type="text" id="name" name="name" required class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all">
+                  </div>
+                  <div class="form-group">
+                    <label for="email" class="block font-semibold mb-2">Email <span class="text-red-500">*</span></label>
+                    <input type="email" id="email" name="email" required class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="phone" class="block font-semibold mb-2">Phone (optional)</label>
+                  <input type="tel" id="phone" name="phone" placeholder="e.g. +27 82 123 4567" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary outline-none transition-all">
+                </div>
+
+                <div class="form-group">
+                  <label for="subject" class="block font-semibold mb-2">Subject <span class="text-red-500">*</span></label>
+                  <input type="text" id="subject" name="subject" required class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary outline-none transition-all">
+                </div>
+
+                <div class="form-group">
+                  <label for="message" class="block font-semibold mb-2">Message <span class="text-red-500">*</span></label>
+                  <textarea id="message" name="message" rows="5" required class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary outline-none transition-all resize-y"></textarea>
+                </div>
+
+                <!-- Web3Forms hCaptcha -->
+                <div class="h-captcha" data-captcha="true"></div>
+
+                <button type="submit" class="btn btn-primary w-full md:w-auto px-8 py-3 text-lg mt-4 flex items-center justify-center gap-2">
+                  Send Message
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </button>
+              </form>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Partial -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="/assets/Branding_SCE.png" alt="SCE Branding" class="footer-logo">
+        <p>Product Development and CNC Solutions.</p>
+      </div>
+      <div class="footer-links">
+        <h4>QUICK LINKS</h4>
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="/projects.html">Projects</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Southern Composite Engineering. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Web3Forms script -->
+  <script src="https://web3forms.com/client/script.js" async defer></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/animations.js"></script>
+  <script src="/js/form.js"></script>
+</body>
+</html>
