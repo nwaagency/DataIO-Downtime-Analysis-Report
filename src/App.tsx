@@ -29,9 +29,6 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      {/* Using HashRouter is the most reliable way to host React SPAs on GitHub Pages.
-        It bypasses server-side routing limitations by using the URL hash (e.g., /#/about).
-      */}
       <HashRouter>
         <ScrollToTop />
         <Routes>
