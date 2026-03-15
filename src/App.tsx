@@ -24,12 +24,17 @@ const ScrollToTop = () => {
   return null;
 };
 
+// React Router expects the basename WITHOUT a trailing slash.
+// Vite's import.meta.env.BASE_URL automatically includes a trailing slash.
+// We remove it here to prevent the 404 routing error on GitHub Pages.
+const routerBasename = import.meta.env.BASE_URL.replace(/\/$/, '');
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <BrowserRouter basename={routerBasename}>
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
