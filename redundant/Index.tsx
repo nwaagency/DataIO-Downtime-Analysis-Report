@@ -8,17 +8,17 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Cog, Cpu, Layers, Wrench, ShieldCheck, Sparkles, Gauge, Ruler, PenTool, Award, Users, ChevronLeft, ChevronRight } from "lucide-react";
 import { AnimatePresence, motion, useAnimation, useInView } from "framer-motion";
 import { ScrollAnimationWrapper } from "@/hooks/use-scroll-animation";
-import cncImage from "@/assets/cnc-milling.jpg";
+import cncImage from "@assets/cnc-milling.jpg";
 //fix this code
-import cadImage from "@/assets/Slide_Show/SS_Drill_Head.jpg";
-import skiSpotImage from "@/assets/Skispot_Gen.png";
-import armGenImage from "@/assets/Arm_Gen.png";
-import cncVideo from "@/assets/DSC_2714.mov";
-import machineBlueprint from "@/assets/machine_blue_strong.jpg";
+import cadImage from "@assets/Slide_Show/SS_Drill_Head.jpg";
+import skiSpotImage from "@assets/Skispot_Gen.png";
+import armGenImage from "@assets/Arm_Gen.png";
+import cncVideo from "@assets/DSC_2714.mov";
+import machineBlueprint from "@assets/machine_blue_strong.jpg";
 import SectionHeading from "@/components/SectionHeading";
 import FloatingBlueprintLines from "@/components/FloatingBlueprintLines";
-import icon_Gear from "@/assets/icon_Gear.png";
-import icon_Spanner from "@/assets/icon_Spanner.png";
+import icon_Gear from "@assets/icon_Gear.png";
+import icon_Spanner from "@assets/icon_Spanner.png";
 
 
 const Index = () => {

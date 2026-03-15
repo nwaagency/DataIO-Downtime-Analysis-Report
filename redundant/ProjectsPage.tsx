@@ -2,8 +2,8 @@ import Navigation from "@/components/Navigation";
 import Projects from "@/components/Projects";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
-import blueBackground from "@/assets/Blue Background.png";
-import metalGearNoBg from "@/assets/metalGearnoBG.png";
+import blueBackground from "@assets/Blue Background.png";
+import metalGearNoBg from "@assets/metalGearnoBG.png";
 import SectionHeading from "@/components/SectionHeading";
 
 const ProjectsPage = () => {
