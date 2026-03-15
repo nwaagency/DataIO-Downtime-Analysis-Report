@@ -38,7 +38,6 @@ logs/
 *.log.*
 
 # → Generated lock files (optional — keep one)
-package-lock.json
 bun.lockb
 
 # → Temporary / Archive files
