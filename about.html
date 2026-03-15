@@ -5,14 +5,14 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>About Us | SC Engineering</title>
-        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="/src/css/output.css">
         <link rel="stylesheet" href="/src/css/styles.css">
         <script src="https://unpkg.com/lucide@latest"></script>
     </head>
 
     <body class="pt-20">
         <!-- Navigation -->
-       <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
+        <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
             <div class="container mx-auto px-4 h-20 flex items-center justify-between">
                 <a href="index.html" class="flex items-center">
                     <img src="/assets/Branding_SCE.png" alt="SC Engineering" class="h-10 w-auto object-contain">
@@ -74,7 +74,7 @@
                 </div>
             </section>
         </div>
-       <footer class="bg-[#0b1a2d] text-white pt-24 pb-12 overflow-hidden relative">
+        <footer class="bg-[#0b1a2d] text-white pt-24 pb-12 overflow-hidden relative">
             <div class="absolute inset-0 blueprint-pattern opacity-10"></div>
             <div class="container relative z-10">
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
@@ -111,13 +111,7 @@
                 <div class="pt-8 border-t border-white/5 text-center text-slate-500 text-sm font-bold tracking-widest uppercase"> © <span id="year"></span> Southern Composite Engineering </div>
             </div>
         </footer>
-        <script>
-            lucide.createIcons();
-            const menuBtn = document.getElementById('mobile-menu-btn');
-            const menu = document.getElementById('mobile-menu');
-            menuBtn.addEventListener('click', () => menu.classList.toggle('hidden'));
-        </script>
-        
+        <script src="/src/js/main.js"></script>
     </body>
 
 </html>

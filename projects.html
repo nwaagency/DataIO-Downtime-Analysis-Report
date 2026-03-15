@@ -5,14 +5,14 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Projects | SC Engineering</title>
-        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="/src/css/output.css">
         <link rel="stylesheet" href="/src/css/styles.css">
         <script src="https://unpkg.com/lucide@latest"></script>
     </head>
 
     <body class="bg-slate-50 pt-20">
         <!-- Navigation -->
-       <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
+        <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
             <div class="container mx-auto px-4 h-20 flex items-center justify-between">
                 <a href="index.html" class="flex items-center">
                     <img src="/assets/Branding_SCE.png" alt="SC Engineering" class="h-10 w-auto object-contain">
@@ -109,30 +109,29 @@
                 </div>
                 <div class="pt-8 border-t border-white/5 text-center text-slate-500 text-sm font-bold tracking-widest uppercase"> © <span id="year"></span> Southern Composite Engineering </div>
             </div>
-       
-        <script>
-            lucide.createIcons();
-            document.querySelectorAll('.expand-btn').forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    const inner = btn.closest('.card-inner');
-                    const overlay = inner.querySelector('.card-overlay');
-                    const video = inner.querySelector('.video-bg');
+            <script>
+                lucide.createIcons();
+                document.querySelectorAll('.expand-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const inner = btn.closest('.card-inner');
+                        const overlay = inner.querySelector('.card-overlay');
+                        const video = inner.querySelector('.video-bg');
 
-                    if (inner.classList.contains('h-[500px]')) {
-                        inner.classList.replace('h-[500px]', 'h-[700px]');
-                        overlay.classList.add('opacity-0');
-                        video.classList.replace('brightness-[0.4]', 'brightness-100');
-                        btn.innerHTML = '<i data-lucide="minimize-2"></i>';
-                    } else {
-                        inner.classList.replace('h-[700px]', 'h-[500px]');
-                        overlay.classList.remove('opacity-0');
-                        video.classList.replace('brightness-100', 'brightness-[0.4]');
-                        btn.innerHTML = '<i data-lucide="maximize-2"></i>';
-                    }
-                    lucide.createIcons();
+                        if (inner.classList.contains('h-[500px]')) {
+                            inner.classList.replace('h-[500px]', 'h-[700px]');
+                            overlay.classList.add('opacity-0');
+                            video.classList.replace('brightness-[0.4]', 'brightness-100');
+                            btn.innerHTML = '<i data-lucide="minimize-2"></i>';
+                        } else {
+                            inner.classList.replace('h-[700px]', 'h-[500px]');
+                            overlay.classList.remove('opacity-0');
+                            video.classList.replace('brightness-100', 'brightness-[0.4]');
+                            btn.innerHTML = '<i data-lucide="maximize-2"></i>';
+                        }
+                        lucide.createIcons();
+                    });
                 });
-            });
-        </script>
+            </script>
     </body>
 
 </html>
