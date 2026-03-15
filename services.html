@@ -85,7 +85,65 @@
                 <div class="pt-8 border-t border-white/5 text-center text-slate-500 text-sm font-bold tracking-widest uppercase"> © <span id="year"></span> Southern Composite Engineering </div>
             </div>
         </footer>
-        <script src="/src/js/main.js"></script>
+        <script>
+            lucide.createIcons();
+
+            const details = {
+                cnc: {
+                    title: "CNC Manufacturing",
+                    desc: "Our workshop is optimized for 4-axis precision machining. We specialize in complex components that require tight tolerances and superior finishes.",
+                    items: ["Aluminum, Stainless Steel & Brass", "Engineering Plastics (PEEK, Delrin, Nylon)", "Micron-level accuracy and repeatability", "Small to medium batch production"],
+                    image: "/assets/Slide_Show/SS_workshop.jpg"
+                },
+                dev: {
+                    title: "Product Development",
+                    desc: "We assist clients from the napkin sketch stage through to functional production prototypes.",
+                    items: ["CAD/CAM System Integration", "Iterative mechanical prototyping", "Control system & Mechatronics design", "Full technical documentation"],
+                    image: "/assets/Product_Development.jpg"
+                }
+            };
+
+            function updateTab(key) {
+                const data = details[key];
+                const container = document.getElementById('service-content');
+                container.style.opacity = 0;
+
+                setTimeout(() => {
+                    container.innerHTML = `
+                    <div class="space-y-8">
+                        <h2 class="text-4xl font-bold text-slate-900">${data.title}</h2>
+                        <p class="text-xl text-slate-500 leading-relaxed">${data.desc}</p>
+                        <ul class="space-y-4">
+                            ${data.items.map(item => `
+                                <li class="flex items-center gap-4 font-bold text-slate-700">
+                                    <div class="w-2 h-2 rounded-full bg-blue-900"></div> ${item}
+                                </li>
+                            `).join('')}
+                        </ul>
+                        <a href="contact.html" class="inline-block bg-[#0b1f3f] text-white px-8 py-4 rounded-lg font-bold hover:scale-105 transition-all">Start Project</a>
+                    </div>
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl h-[550px] border border-slate-100">
+                        <img src="${data.image}" class="w-full h-full object-cover">
+                    </div>
+                `;
+                    container.style.opacity = 1;
+                }, 300);
+            }
+
+            document.getElementById('tab-cnc').addEventListener('click', (e) => {
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                e.target.classList.add('active');
+                updateTab('cnc');
+            });
+
+            document.getElementById('tab-dev').addEventListener('click', (e) => {
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                e.target.classList.add('active');
+                updateTab('dev');
+            });
+
+            updateTab('cnc');
+        </script>
     </body>
 
 </html>

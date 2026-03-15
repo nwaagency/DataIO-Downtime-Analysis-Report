@@ -111,7 +111,12 @@
                 <div class="pt-8 border-t border-white/5 text-center text-slate-500 text-sm font-bold tracking-widest uppercase"> © <span id="year"></span> Southern Composite Engineering </div>
             </div>
         </footer>
-        <script src="/src/js/main.js"></script>
+        <script>
+            lucide.createIcons();
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            menuBtn.addEventListener('click', () => menu.classList.toggle('hidden'));
+        </script>
     </body>
 
 </html>
