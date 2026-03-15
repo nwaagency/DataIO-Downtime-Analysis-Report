@@ -15,7 +15,7 @@
         <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
             <div class="container mx-auto px-4 h-20 flex items-center justify-between">
                 <a href="index.html" class="flex items-center">
-                    <img src="https://placehold.co/400x120/0b1a2d/white?text=SC+ENGINEERING" alt="SC Engineering" class="h-10 w-auto object-contain">
+                    <img src="/assets/Branding_SCE.png" alt="SC Engineering" class="h-10 w-auto object-contain">
                 </a>
                 <div class="hidden lg:flex items-center gap-10">
                     <a href="index.html" class="text-sm font-bold uppercase tracking-widest text-blue-900">Home</a>
@@ -51,14 +51,14 @@
                     <div class="lg:col-span-7">
                         <div id="slideshow" class="relative aspect-video rounded-3xl overflow-hidden shadow-2xl bg-slate-900 border border-slate-100">
                             <div class="slide absolute inset-0 opacity-100 transition-opacity duration-1000">
-                                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200" alt="" class="w-full h-full object-cover">
+                                <img src="/assets/Slide_Show/SS_workshop.jpg" alt="" class="w-full h-full object-cover">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-10 flex flex-col justify-end text-white">
                                     <h3 class="text-3xl font-bold mb-2">Precision CNC</h3>
                                     <p class="text-lg opacity-80">4-axis milling with micron-level accuracy for complex parts.</p>
                                 </div>
                             </div>
                             <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
-                                <video src="https://assets.mixkit.co/videos/preview/mixkit-factory-robotic-arm-manufacturing-4034-large.mp4" autoplay muted loop playsinline class="w-full h-full object-cover"></video>
+                                <video src="/assets/Slide_Show/CNC_facing.mp4" autoplay muted loop playsinline class="w-full h-full object-cover"></video>
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-10 flex flex-col justify-end text-white">
                                     <h3 class="text-3xl font-bold mb-2">Custom Automation</h3>
                                     <p class="text-lg opacity-80">Developing reliable robotic systems for global markets.</p>
@@ -97,25 +97,36 @@
         </section>
         <!-- Footer -->
         <footer class="bg-[#0b1a2d] text-white pt-24 pb-12 overflow-hidden relative">
-            <div class="container mx-auto px-4 relative z-10">
+            <div class="absolute inset-0 blueprint-pattern opacity-10"></div>
+            <div class="container relative z-10">
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
                     <div class="md:col-span-2">
-                        <img src="https://placehold.co/400x120/0b1a2d/white?text=SC+ENGINEERING" alt="SCE" class="h-10 mb-8 brightness-0 invert">
+                        <img src="/assets/Branding_SCE.png" alt="SCE" class="h-10 mb-8">
                         <p class="text-slate-400 max-w-sm text-lg leading-relaxed">Specialist engineering workshop focused on precision CNC manufacturing and mechatronic product development.</p>
                     </div>
                     <div>
                         <h4 class="font-bold text-xs uppercase tracking-widest text-slate-500 mb-6">Quick Links</h4>
                         <ul class="space-y-4 font-bold">
-                            <li><a href="services.html" class="hover:text-blue-400">Services</a></li>
-                            <li><a href="projects.html" class="hover:text-blue-400">Projects</a></li>
-                            <li><a href="about.html" class="hover:text-blue-400">About Our Story</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="projects.html">Projects</a></li>
+                            <li><a href="about.html">About Us</a></li>
                         </ul>
                     </div>
                     <div>
                         <h4 class="font-bold text-xs uppercase tracking-widest text-slate-500 mb-6">Connect</h4>
-                        <div class="space-y-4 text-slate-300">
-                            <div class="flex items-center gap-3"><i data-lucide="mail" class="w-5 h-5 text-blue-400"></i> sales@scengineering.co.za</div>
-                            <div class="flex items-center gap-3"><i data-lucide="map-pin" class="w-5 h-5 text-blue-400"></i> Diep River, Cape Town</div>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <a href="mailto:sales@scengineering.co.za" class="contact-link">
+                                    <i data-lucide="mail" class="w-5 h-5"></i> sales@scengineering.co.za </a>
+                            </div>
+                            <div class="flex items-center">
+                                <a href="https://maps.app.goo.gl/DBzLpXSFJLWrwFeK8" class="contact-link" target="_blank">
+                                    <i data-lucide="map-pin" class="w-5 h-5"></i> Prime Park, Mocke Road </a>
+                            </div>
+                            <div class="flex items-center">
+                                <a href="https://maps.app.goo.gl/FYf7BT2D8Gu9Pgjt7" class="contact-link" target="_blank">
+                                    <i data-lucide="map-pin" class="w-5 h-5"></i> Diep River, Western Cape </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -159,6 +170,7 @@
             }, { threshold: 0.1 });
             document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
         </script>
+        
     </body>
 
 </html>

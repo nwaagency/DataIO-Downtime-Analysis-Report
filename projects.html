@@ -12,17 +12,26 @@
 
     <body class="bg-slate-50 pt-20">
         <!-- Navigation -->
-        <nav class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-slate-100">
+       <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
             <div class="container mx-auto px-4 h-20 flex items-center justify-between">
-                <a href="index.html" class="flex items-center"><img src="https://placehold.co/400x120/0b1a2d/white?text=SC+ENGINEERING" alt="Logo" class="h-10 w-auto"></a>
-                <div class="hidden lg:flex items-center gap-10 font-bold text-slate-400">
-                    <a href="index.html">Home</a>
-                    <a href="services.html">Services</a>
-                    <a href="projects.html" class="text-blue-900">Projects</a>
-                    <a href="about.html">About</a>
-                    <a href="contact.html" class="bg-[#0b1f3f] text-white px-6 py-2 rounded-lg font-bold text-sm">Contact</a>
+                <a href="index.html" class="flex items-center">
+                    <img src="/assets/Branding_SCE.png" alt="SC Engineering" class="h-10 w-auto object-contain">
+                </a>
+                <div class="hidden lg:flex items-center gap-10">
+                    <a href="index.html" class="text-sm font-bold uppercase tracking-widest text-slate-400 hover:text-blue-900 transition-colors">Home</a>
+                    <a href="services.html" class="text-sm font-bold uppercase tracking-widest text-slate-400 hover:text-blue-900 transition-colors">Services</a>
+                    <a href="projects.html" class="text-sm font-bold uppercase tracking-widest text-blue-900">Projects</a>
+                    <a href="about.html" class="text-sm font-bold uppercase tracking-widest text-slate-400 hover:text-blue-900 transition-colors">About</a>
+                    <a href="contact.html" class="bg-[#0b1f3f] text-white px-6 py-2 rounded-lg font-bold text-sm uppercase tracking-widest hover:scale-105 transition-all">Contact Us</a>
                 </div>
                 <button id="mobile-menu-btn" class="lg:hidden text-slate-900"><i data-lucide="menu"></i></button>
+            </div>
+            <div id="mobile-menu" class="hidden absolute top-20 left-0 w-full bg-white border-t border-slate-100 flex flex-col p-8 gap-6 shadow-xl">
+                <a href="index.html" class="text-xl font-bold">Home</a>
+                <a href="services.html" class="text-xl font-bold">Services</a>
+                <a href="projects.html" class="text-xl font-bold">Projects</a>
+                <a href="about.html" class="text-xl font-bold">About</a>
+                <a href="contact.html" class="bg-[#0b1f3f] text-white px-6 py-3 rounded-lg font-bold text-center">Contact Us</a>
             </div>
         </nav>
         <div class="pt-32 pb-24 container mx-auto px-4">
@@ -35,7 +44,7 @@
                 <!-- Project Item 1 -->
                 <div class="project-card relative overflow-hidden rounded-[40px] shadow-xl border border-slate-100 group">
                     <div class="card-inner relative h-[500px] transition-all duration-700">
-                        <video src="https://assets.mixkit.co/videos/preview/mixkit-factory-robotic-arm-manufacturing-4034-large.mp4" autoplay muted loop playsinline class="video-bg absolute inset-0 w-full h-full object-cover transition-all brightness-[0.4]"></video>
+                        <video src="/assets/Slide_Show/CNC_facing.mp4" autoplay muted loop playsinline class="video-bg absolute inset-0 w-full h-full object-cover transition-all brightness-[0.4]"></video>
                         <div class="card-overlay absolute inset-0 p-12 flex flex-col justify-end text-white">
                             <div class="flex gap-2 mb-4">
                                 <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] font-black uppercase">Pneumatics</span>
@@ -50,7 +59,7 @@
                 <!-- Project Item 2 -->
                 <div class="project-card relative overflow-hidden rounded-[40px] shadow-xl border border-slate-100 group">
                     <div class="card-inner relative h-[500px] transition-all duration-700">
-                        <video src="https://assets.mixkit.co/videos/preview/mixkit-worker-working-on-a-lathe-machine-in-a-workshop-4035-large.mp4" autoplay muted loop playsinline class="video-bg absolute inset-0 w-full h-full object-cover transition-all brightness-[0.4]"></video>
+                        <video src="/assets/Slide_Show/SS_CNC_tool_change_edited.mp4" autoplay muted loop playsinline class="video-bg absolute inset-0 w-full h-full object-cover transition-all brightness-[0.4]"></video>
                         <div class="card-overlay absolute inset-0 p-12 flex flex-col justify-end text-white">
                             <div class="flex gap-2 mb-4">
                                 <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] font-black uppercase">BLE</span>
@@ -64,7 +73,43 @@
                 </div>
             </div>
         </div>
-        <footer class="bg-[#0b1a2d] text-white py-12 text-center text-sm font-bold tracking-widest uppercase mt-20"> © 2024 Southern Composite Engineering </footer>
+        <footer class="bg-[#0b1a2d] text-white pt-24 pb-12 overflow-hidden relative">
+            <div class="absolute inset-0 blueprint-pattern opacity-10"></div>
+            <div class="container relative z-10">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                    <div class="md:col-span-2">
+                        <img src="/assets/Branding_SCE.png" alt="SCE" class="h-10 mb-8">
+                        <p class="text-slate-400 max-w-sm text-lg leading-relaxed">Specialist engineering workshop focused on precision CNC manufacturing and mechatronic product development.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-xs uppercase tracking-widest text-slate-500 mb-6">Quick Links</h4>
+                        <ul class="space-y-4 font-bold">
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="projects.html">Projects</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-xs uppercase tracking-widest text-slate-500 mb-6">Connect</h4>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <a href="mailto:sales@scengineering.co.za" class="contact-link">
+                                    <i data-lucide="mail" class="w-5 h-5"></i> sales@scengineering.co.za </a>
+                            </div>
+                            <div class="flex items-center">
+                                <a href="https://maps.app.goo.gl/DBzLpXSFJLWrwFeK8" class="contact-link" target="_blank">
+                                    <i data-lucide="map-pin" class="w-5 h-5"></i> Prime Park, Mocke Road </a>
+                            </div>
+                            <div class="flex items-center">
+                                <a href="https://maps.app.goo.gl/FYf7BT2D8Gu9Pgjt7" class="contact-link" target="_blank">
+                                    <i data-lucide="map-pin" class="w-5 h-5"></i> Diep River, Western Cape </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-8 border-t border-white/5 text-center text-slate-500 text-sm font-bold tracking-widest uppercase"> © <span id="year"></span> Southern Composite Engineering </div>
+            </div>
+       
         <script>
             lucide.createIcons();
             document.querySelectorAll('.expand-btn').forEach(btn => {
