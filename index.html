@@ -765,9 +765,7 @@
                     <a href="#shift">Shift</a>
                     <a href="#incidents">Incidents</a>
                     <a href="#correlation">Correlation</a>
-                    <a href="#risk">Risk</a>
                     <a href="#findings">Findings</a>
-                    <a href="#recs">Recommendations</a>
                 </div>
             </div>
         </nav>
@@ -1587,68 +1585,10 @@
                     </table>
                 </div>
             </div>
-            <!-- ══ 9. DATA QUALITY ══ -->
-            <div class="section" id="dq">
-                <div class="section-head">
-                    <span class="section-num">09</span>
-                    <h2 class="section-title">Data Quality &amp; Limitations</h2>
-                </div>
-                <div class="tbl-wrap" style="padding:16px 20px;">
-                    <div class="dq-row">
-                        <div class="dq-icon warn">!</div>
-                        <div class="dq-body">
-                            <div class="h">62 tickets missing duration_mins (5.2% gap)</div>
-                            <p>Resolution time could not be calculated for 62 records. Impacted categories: AWS (8), Permissions (8), Connection Issues (4). Mean and percentile TTR figures are computed on 1,121 records and may underestimate categories with disproportionate missing data.</p>
-                        </div>
-                    </div>
-                    <div class="dq-row">
-                        <div class="dq-icon warn">!</div>
-                        <div class="dq-body">
-                            <div class="h">5 key tickets missing duration field</div>
-                            <p>5 of 34 major incidents have no duration recorded. Total key-ticket downtime (152.3 hrs) is an undercount. Actual figure could be 20–40 hrs higher based on peer incident patterns.</p>
-                        </div>
-                    </div>
-                    <div class="dq-row">
-                        <div class="dq-icon warn">!</div>
-                        <div class="dq-body">
-                            <div class="h">No explicit outage-ticket linkage ID</div>
-                            <p>Correlation between key incidents and classified tickets relies on temporal and categorical inference, not a shared foreign key. Causal analysis would require a joined incident management system.</p>
-                        </div>
-                    </div>
-                    <div class="dq-row">
-                        <div class="dq-icon info">i</div>
-                        <div class="dq-body">
-                            <div class="h">Subcategory naming inconsistency (minor)</div>
-                            <p>"Locked / Unlock" and "Locked / Unlock (General)" appear as separate subcategories (103 + 29 = 132 records). If merged, this becomes the 2nd most common subcategory. No impact on category-level analysis.</p>
-                        </div>
-                    </div>
-                    <div class="dq-row">
-                        <div class="dq-icon info">i</div>
-                        <div class="dq-body">
-                            <div class="h">Duration values in key tickets are human-entered strings</div>
-                            <p>Formats vary ("2 Hours", "15 Hours 10 mins", "40 mins"). All were parsed programmatically and validated. Edge cases handled; accuracy is high.</p>
-                        </div>
-                    </div>
-                    <div class="dq-row">
-                        <div class="dq-icon ok">✓</div>
-                        <div class="dq-body">
-                            <div class="h">No duplicate ticket IDs detected</div>
-                            <p>All 1,183 ticket IDs are unique. Date formatting is consistent (ISO 8601). No Grand Total rows were present in either dataset.</p>
-                        </div>
-                    </div>
-                    <div class="dq-row">
-                        <div class="dq-icon ok">✓</div>
-                        <div class="dq-body">
-                            <div class="h">Month field is internally consistent</div>
-                            <p>All 12 months of 2025 are present. No gaps. Month-level aggregations are reliable.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <!-- ══ 10. KEY FINDINGS ══ -->
             <div class="section" id="findings">
                 <div class="section-head">
-                    <span class="section-num">10</span>
+                    <span class="section-num">9</span>
                     <h2 class="section-title">Key Insights</h2>
                 </div>
                 <div class="tbl-wrap">
@@ -1747,131 +1687,6 @@
                             <p>62 tickets have no resolution time recorded. Several fall in high-priority categories (AWS: 8, Permissions: 8). SLA compliance calculations using this dataset will overstate performance by masking potentially slow resolutions in the missing records.</p>
                             <div class="action">→ Enforce mandatory duration capture at ticket close via system-level validation; backfill using linked systems.</div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <!-- ══ 11. RECOMMENDATIONS ══ -->
-            <div class="section" id="recs">
-                <div class="section-head">
-                    <span class="section-num">11</span>
-                    <h2 class="section-title">Strategic Recommendations</h2>
-                </div>
-                <div class="rec">
-                    <div class="rec-n">R1</div>
-                    <div class="rec-body">
-                        <div class="tag">Process Improvement · Highest Priority</div>
-                        <div class="h">Deploy RBAC automation and self-service access provisioning</div>
-                        <p>Permissions is the #1 downtime category (32,230 hrs, 168 tickets). Implement an automated role-based access control system with a self-service portal. Set a hard SLA of 4 hours for standard access requests, 24 hours for elevated/administrative access. Integrate with HR systems to auto-trigger provisioning on hire. Target: 40% reduction in Permissions ticket volume within 6 months, 60% reduction in avg TTR. Estimated downtime saved: 12,000–18,000 hrs annually.</p>
-                    </div>
-                </div>
-                <div class="rec">
-                    <div class="rec-n">R2</div>
-                    <div class="rec-body">
-                        <div class="tag">Process Improvement · High Priority</div>
-                        <div class="h">Redesign the onboarding process with a 5-day SLA and parallel-track provisioning</div>
-                        <p>Current average of 884 hrs (37 days) per onboarding ticket is unacceptable. Redesign workflow so all system provisioning tasks run in parallel from day one. Assign a dedicated onboarding coordinator. Set a target of sub-120 hrs (5 business days). Automate account creation triggers via HR system integration. Expected impact: elimination of 15,000–17,000 hrs of annual downtime from this single category.</p>
-                    </div>
-                </div>
-                <div class="rec">
-                    <div class="rec-n">R3</div>
-                    <div class="rec-body">
-                        <div class="tag">Staffing Optimisation · High Priority</div>
-                        <div class="h">Conduct a Shift 3 capability and resourcing audit</div>
-                        <p>Shift 3 resolves tickets 53% slower than Shift 2 and carries the highest total downtime (117,187 hrs). Conduct a structured audit covering: (a) headcount vs ticket load, (b) access to escalation paths and senior engineers, (c) category-specific training gaps (Permissions, Prod Machine, Onboarding). Introduce cross-shift handover protocols for tickets open &gt;12 hours. Implement shift-performance dashboards reviewed weekly.</p>
-                    </div>
-                </div>
-                <div class="rec">
-                    <div class="rec-n">R4</div>
-                    <div class="rec-body">
-                        <div class="tag">Incident Prevention · Critical</div>
-                        <div class="h">Implement proactive certificate, license, and token expiry monitoring</div>
-                        <p>Three major recurring incidents (Aspera Console/HSTS cert, Aspera Faspex TM2 token, Bitwarden license) are all expiry-related and entirely preventable. Deploy a centralised expiry monitoring tool that triggers alerts at 60, 30, and 7 days before expiration for all certificates, licenses, and authentication tokens. Assign an owner for each. Estimated impact: elimination of 3+ key incidents per year representing 14,000+ hours of downtime.</p>
-                    </div>
-                </div>
-                <div class="rec">
-                    <div class="rec-n">R5</div>
-                    <div class="rec-body">
-                        <div class="tag">Incident Prevention · High Priority</div>
-                        <div class="h">Build multi-region AWS failover and secondary ISP contracts for critical facilities</div>
-                        <p>The AWS US-East-1 outage (15.2 hrs), SohoNet failure (21.5 hrs), and Burbank power outage (20 hrs) demonstrate single-point-of-failure dependencies with no documented recovery path. Actions: (a) architect critical ingest/delivery workflows for AWS multi-region with automatic failover to US-West-2; (b) negotiate secondary ISP at Cairo and Motor facilities; (c) validate UPS and generator coverage for Burbank critical network infrastructure.</p>
-                    </div>
-                </div>
-                <div class="rec">
-                    <div class="rec-n">R6</div>
-                    <div class="rec-body">
-                        <div class="tag">Monitoring &amp; Alerting · Medium Priority</div>
-                        <div class="h">Deploy predictive hardware health monitoring for Prod Machine and LTO/Tape</div>
-                        <p>Prod Machine (19,092 hrs) and LTO/Tape (12,543 hrs) are the 3rd and 9th largest downtime categories respectively. Both are characterised by reactive maintenance — tickets open only after failure. Implement IPMI/BMC telemetry on all production machines, SMART monitoring on storage, and LTO drive-wear tracking. Automate maintenance window scheduling based on predicted failure risk rather than calendar cycles.</p>
-                    </div>
-                </div>
-                <div class="rec">
-                    <div class="rec-n">R7</div>
-                    <div class="rec-body">
-                        <div class="tag">Monitoring &amp; Alerting · Medium Priority</div>
-                        <div class="h">Establish a monthly operational threshold dashboard with escalation triggers</div>
-                        <p>The June 2025 regression (from 11,890 hrs to 32,847 hrs in one month) demonstrates that improvement trends can reverse sharply without structural fixes. Implement a live monthly ops dashboard tracking: (a) downtime hours vs 3-month rolling average, (b) TTR by category, (c) Shift 3 performance ratio, (d) open P99 tickets. Trigger a formal operational review if monthly downtime exceeds 20,000 hours or any category's ticket count increases &gt;30% month-on-month.</p>
-                    </div>
-                </div>
-                <div class="rec">
-                    <div class="rec-n">R8</div>
-                    <div class="rec-body">
-                        <div class="tag">Data Quality · Medium Priority</div>
-                        <div class="h">Mandate resolution time capture and build a known-issue registry</div>
-                        <p>Two interconnected data quality actions: (a) enforce system-level validation that blocks ticket closure without a resolution duration field — this eliminates the 5.2% gap that undermines SLA reporting; (b) deploy a known-issue registry linked to the helpdesk system so recurring incidents (Aspera HSTS, Permissions portal) are tracked as ongoing problems rather than new tickets. Both changes require minimal technical effort but substantially improve reporting accuracy and operational awareness.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- ══ 12. VISUALIZATION PLAN ══ -->
-            <div class="section" id="vizplan">
-                <div class="section-head">
-                    <span class="section-num">12</span>
-                    <h2 class="section-title">Visualization Plan</h2>
-                </div>
-                <div class="viz-grid">
-                    <div class="viz-item">
-                        <div class="icon">📈</div>
-                        <div class="h">Monthly downtime trend line</div>
-                        <p>Dual-axis: ticket count bars + downtime line. Annotate anomaly months (Jan, Jun). Show 3-month rolling average.</p>
-                    </div>
-                    <div class="viz-item">
-                        <div class="icon">🔥</div>
-                        <div class="h">Month × Shift heatmap</div>
-                        <p>12 rows × 3 columns. Cell = ticket count or total downtime hrs. Identify Shift 3 + H1 as the hot zone.</p>
-                    </div>
-                    <div class="viz-item">
-                        <div class="icon">📊</div>
-                        <div class="h">Pareto chart — category downtime</div>
-                        <p>Bar chart + cumulative % line. Show that top 5 categories = 54.4% of all downtime. Classic 80/20 view.</p>
-                    </div>
-                    <div class="viz-item">
-                        <div class="icon">⭕</div>
-                        <div class="h">TTR distribution by category</div>
-                        <p>Box-and-whisker or violin plot. Show spread, median, P90 per category. Highlights Security and Onboarding outliers visually.</p>
-                    </div>
-                    <div class="viz-item">
-                        <div class="icon">🗺</div>
-                        <div class="h">Bubble chart — frequency vs TTR</div>
-                        <p>X = avg TTR, Y = total downtime, bubble = ticket count. Quadrant: top-right = chronic+slow = highest priority targets.</p>
-                    </div>
-                    <div class="viz-item">
-                        <div class="icon">⚡</div>
-                        <div class="h">Ticket spikes during key incidents</div>
-                        <p>Timeline bar chart. Overlay key incident dates as vertical markers. Visualise ticket surge in weeks following major outages.</p>
-                    </div>
-                    <div class="viz-item">
-                        <div class="icon">📉</div>
-                        <div class="h">Z-score anomaly chart</div>
-                        <p>Bar chart coloured by severity (red &gt;1.0, amber 0.5–1.0, green &lt;0). Reference lines at ±1 std deviation. Monthly granularity.</p>
-                    </div>
-                    <div class="viz-item">
-                        <div class="icon">🗓</div>
-                        <div class="h">Day-of-week volume heatmap</div>
-                        <p>7-column calendar grid with total ticket count per day. Mid-week peak immediately visible. Informs staffing shift planning.</p>
-                    </div>
-                    <div class="viz-item">
-                        <div class="icon">🎯</div>
-                        <div class="h">Risk quadrant matrix</div>
-                        <p>2×2: X = downtime impact, Y = ticket frequency. Quadrant labels: Monitor / Plan / Automate / Transform. Plot each category.</p>
                     </div>
                 </div>
             </div>
